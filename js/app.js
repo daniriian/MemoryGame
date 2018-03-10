@@ -55,6 +55,7 @@ function initBoard() {
     hitCounter = 0;
     pairsToDiscover = 8;
     timer = 0;
+    starRating = 3;
     setTime(timer);
     clearInterval(timeInterval);
     updateScore(0);
@@ -143,8 +144,7 @@ function clock(x) {
 
 function updateScore(val) {
     numOfMoves.textContent = (val / 2).toFixed(0) + ' moves';
-    if (hitCounter === 26 || hitCounter === 38 ||
-        hitCounter === 50) deleteStar();
+    if (hitCounter === 35 || hitCounter === 50) deleteStar();
 }
 
 function deleteStar(index) {
@@ -176,18 +176,16 @@ function winGame() {
     m_totalTime.textContent = (mm + ' minutes and ' + ss + ' seconds');
 
     //m_starRating.textContent = (starRating + ' stars');
-    if (starRating > 0) {
-        let s = document.createElement('li');
-        m_starRating.appendChild(s);
-        m_starRating.firstElementChild.className = ('stars');
-        for (let i = 0; i < starRating; i++) {
-            let temp = document.createElement('i');
-            temp.classList.add('fa', 'fa-star');
-            m_starRating.firstElementChild.appendChild(temp);
-        }
-    } else {
-        m_starRating.textContent = (' 0 stars')
+
+    let s = document.createElement('li');
+    m_starRating.appendChild(s);
+    m_starRating.firstElementChild.className = ('stars');
+    for (let i = 0; i < starRating; i++) {
+        let temp = document.createElement('i');
+        temp.classList.add('fa', 'fa-star');
+        m_starRating.firstElementChild.appendChild(temp);
     }
+
     modal.classList.add('show');
     document.querySelector('.close').addEventListener('click', function() {
         modal.classList.remove('show');
@@ -198,6 +196,9 @@ function winGame() {
 function restartGame() {
     initBoard();
     modal.classList.remove('show');
+    while (m_starRating.firstChild) {
+        m_starRating.removeChild(m_starRating.firstChild);
+    }
 }
 
 initBoard();
