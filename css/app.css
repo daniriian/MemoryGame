@@ -306,3 +306,28 @@ h1 {
         transform: perspective(400px);
     }
 }
+
+
+/* -------------------------------------
+------------Media querries-----------
+-------------------------------------- */
+
+@media screen and (min-width: 450px) {
+    .deck {
+        width: 450px;
+        height: 420px;
+    }
+    .card .fa {
+        font-size: 75%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .deck {
+        width: 600px;
+        height: 500px;
+    }
+    .card .fa {
+        font-size: 100%;
+    }
+}
