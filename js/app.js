@@ -44,6 +44,24 @@ for (let i = 0; i < cards.length; i++) {
     cardSymbols[i] = cards[i].firstElementChild.className;
 }
 
+
+//function to init the board on game start or board reset
+function initBoard() {
+    cardSymbols = shuffle(cardSymbols);
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].firstElementChild.className = cardSymbols[i];
+        if (cards[i].classList.contains('match')) {
+            cards[i].className = ('card');
+        }
+    }
+    hitCounter = 0;
+    pairsToDiscover = 8;
+    timer = 0;
+    setTime(timer);
+    clearInterval(timeInterval);
+    updateScore(0);
+    initRating();
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
