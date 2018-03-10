@@ -210,3 +210,10 @@ function winGame() {
         initBoard();
     })
 }
+
+function restartGame() {
+    initBoard();
+    modal.classList.remove('show');
+}
+
+initBoard();
