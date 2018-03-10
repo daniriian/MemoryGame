@@ -126,3 +126,8 @@ for (let i = 0; i < cards.length; i++) {
         }
     });
 }
+
+//set up event listener for restart button
+rb.addEventListener('click', function() {
+    initBoard();
+})
