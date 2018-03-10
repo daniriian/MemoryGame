@@ -62,6 +62,16 @@ function initBoard() {
     updateScore(0);
     initRating();
 }
+
+//function to hide the card
+function hideCard(index) {
+    cards[index].className = 'card';
+}
+
+//function to show the card
+function showCard(index) {
+    cards[index].classList.add('open', 'show');
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
