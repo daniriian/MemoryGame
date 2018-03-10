@@ -185,3 +185,28 @@ function verifyMatch(index) {
         }, 1000);
     }
 }
+
+function winGame() {
+    clearInterval(timeInterval);
+    m_totalMoves.textContent = (hitCounter / 2);
+    m_totalTime.textContent = (mm + ' minutes and ' + ss + ' seconds');
+
+    //m_starRating.textContent = (starRating + ' stars');
+    if (starRating > 0) {
+        let s = document.createElement('li');
+        m_starRating.appendChild(s);
+        m_starRating.firstElementChild.className = ('stars');
+        for (let i = 0; i < starRating; i++) {
+            let temp = document.createElement('i');
+            temp.classList.add('fa', 'fa-star');
+            m_starRating.firstElementChild.appendChild(temp);
+        }
+    } else {
+        m_starRating.textContent = (' 0 stars')
+    }
+    modal.classList.add('show');
+    document.querySelector('.close').addEventListener('click', function() {
+        modal.classList.remove('show');
+        initBoard();
+    })
+}
