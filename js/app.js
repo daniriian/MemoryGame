@@ -131,3 +131,13 @@ for (let i = 0; i < cards.length; i++) {
 rb.addEventListener('click', function() {
     initBoard();
 })
+
+//initialize user rating
+function initRating() {
+    while (starRating < 3) {
+        star = document.createElement('li');
+        star.innerHTML = '<i class="fa fa-star"</i>';
+        stars.appendChild(star);
+        starRating++;
+    }
+}
