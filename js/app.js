@@ -141,3 +141,11 @@ function initRating() {
         starRating++;
     }
 }
+
+//calculate elapsed time
+function setTime() {
+    ss = (timer % 60);
+    mm = parseInt(timer / 60);
+    elapsedTime.textContent = (clock(mm) + ':' + clock(ss));
+    timer++;
+}
