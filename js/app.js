@@ -161,3 +161,27 @@ function updateScore(val) {
     if (hitCounter === 26 || hitCounter === 38 ||
         hitCounter === 50) deleteStar();
 }
+
+//deletes a star from table score
+function deleteStar(index) {
+    stars.firstElementChild.remove();
+    starRating--;
+}
+
+//check if 2 cards match
+function verifyMatch(index) {
+    if (cards[index].firstElementChild.className === cards[firstCardIndex].firstElementChild.className) {
+        //we have a match, lock the cards
+        cards[index].classList.add('match');
+        cards[firstCardIndex].classList.add('match');
+        pairsToDiscover--;
+        if (pairsToDiscover === 0) winGame();
+    } else {
+        let fc = firstCardIndex, //first clicked card
+            sc = index; //second clicked card
+        window.setTimeout(function() {
+            hideCard(sc);
+            hideCard(fc);
+        }, 1000);
+    }
+}
