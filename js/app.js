@@ -149,3 +149,15 @@ function setTime() {
     elapsedTime.textContent = (clock(mm) + ':' + clock(ss));
     timer++;
 }
+
+//transform elapsed time to minutes and seconds
+function clock(x) {
+    return (x < 10) ? ('0' + x.toFixed(0)) : x.toFixed(0);
+}
+
+//updates the table score
+function updateScore(val) {
+    numOfMoves.textContent = (val / 2).toFixed(0) + ' moves';
+    if (hitCounter === 26 || hitCounter === 38 ||
+        hitCounter === 50) deleteStar();
+}
