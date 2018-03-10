@@ -39,7 +39,10 @@ let modal = document.getElementById('modal');
 /*
  * Create a list that holds all of your cards
  */
-
+//get symbols from cards on the board
+for (let i = 0; i < cards.length; i++) {
+    cardSymbols[i] = cards[i].firstElementChild.className;
+}
 
 /*
  * Display the cards on the page
