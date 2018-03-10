@@ -146,3 +146,17 @@ h1 {
     width: 20%;
     text-align: center;
 }
+
+.score-panel h2 {
+    text-align: center;
+    margin: 0 auto 10px;
+    font-size: 2em;
+}
+
+.timer,
+.moves {
+    font-size: 1.5em;
+    /* padding-left: 10px; */
+    width: 40%;
+    text-align: center;
+}
