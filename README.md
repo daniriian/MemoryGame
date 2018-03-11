@@ -14,6 +14,10 @@ This project is designed to work on all modern devices (smartphones, tablets, la
 * The game ends once all cards have been correctly matched.
 * During the game you can press the Refresh button to clear the board, shuffle the cards and start again.
 
+##Dependencies
+
+* Javascript must be enabled in your browser in order to play this game
+
 
 
 
