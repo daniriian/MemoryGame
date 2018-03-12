@@ -55,7 +55,7 @@ function initBoard() {
     hitCounter = 0;
     pairsToDiscover = 8;
     timer = 0;
-    starRating = 3;
+    // starRating = 3;
     setTime(timer);
     clearInterval(timeInterval);
     updateScore(0);
@@ -144,7 +144,7 @@ function clock(x) {
 
 function updateScore(val) {
     numOfMoves.textContent = (val / 2).toFixed(0) + ' moves';
-    if (hitCounter === 35 || hitCounter === 50) deleteStar();
+    if (hitCounter === 20 || hitCounter === 30) deleteStar();
 }
 
 function deleteStar(index) {
